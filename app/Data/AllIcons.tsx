@@ -1,0 +1,992 @@
+import { useContextApp } from "../contextApp";
+import { IconData } from "../types/AppTypes";
+
+import {
+  AddTask,
+  Assignment,
+  AssignmentInd,
+  AssignmentLate,
+  AssignmentTurnedIn,
+  AttachFile,
+  Attachment,
+  AutoGraph,
+  Autorenew,
+  Backup,
+  BarChart,
+  BugReport,
+  Business,
+  CalendarMonth,
+  CalendarToday,
+  Campaign,
+  Check,
+  CheckCircle,
+  CheckCircleOutline,
+  Checklist,
+  Circle,
+  Cloud,
+  CloudDone,
+  CloudUpload,
+  Code,
+  Comment,
+  CommentBank,
+  ContactPage,
+  Contacts,
+  CreateNewFolder,
+  Dashboard,
+  DateRange,
+  Delete,
+  Description,
+  Done,
+  DoneAll,
+  Download,
+  DragIndicator,
+  Edit,
+  EditCalendar,
+  Event,
+  EventAvailable,
+  EventBusy,
+  EventNote,
+  Extension,
+  FactCheck,
+  Favorite,
+  Flag,
+  Folder,
+  FolderOpen,
+  FolderShared,
+  Groups,
+  Group,
+  GroupAdd,
+  GroupWork,
+  History,
+  Home,
+  HourglassEmpty,
+  Inbox,
+  Insights,
+  InsertChart,
+  InsertDriveFile,
+  InsertLink,
+  Inventory,
+  Key,
+  Label,
+  Language,
+  Leaderboard,
+  Link,
+  List,
+  ListAlt,
+  Lock,
+  LockOpen,
+  Login,
+  Logout,
+  ManageAccounts,
+  Menu,
+  MoreHoriz,
+  MoreVert,
+  Notifications,
+  NotificationsActive,
+  NotificationsNone,
+  Note,
+  NoteAdd,
+  Notes,
+  Pending,
+  People,
+  PeopleAlt,
+  Person,
+  PersonAdd,
+  PersonOutline,
+  Phone,
+  Photo,
+  PieChart,
+  PlayArrow,
+  PriorityHigh,
+  Print,
+  PushPin,
+  QuestionMark,
+  Refresh,
+  RemoveCircleOutline,
+  Report,
+  RocketLaunch,
+  Schedule,
+  Search,
+  Send,
+  Settings,
+  Share,
+  ShareOutlined,
+  Shield,
+  Star,
+  StarBorder,
+  Stop,
+  SubdirectoryArrowRight,
+  SupervisorAccount,
+  Support,
+  Task,
+  TaskAlt,
+  Timeline,
+  Today,
+  TrendingUp,
+  Upload,
+  Verified,
+  Visibility,
+  VisibilityOff,
+  WatchLater,
+  Work,
+  WorkOutline,
+  WorkspacePremium,
+  LocalLibrary,
+  LibraryBooks,
+} from "@mui/icons-material";
+
+export const allIconsArray: IconData[] = [
+  {
+    id: 1,
+    icon: <Dashboard className="text-[23px]" />,
+    name: "Dashboard",
+    isSelected: false,
+  },
+  {
+    id: 2,
+    icon: <Assignment className="text-[23px]" />,
+    name: "Assignment",
+    isSelected: false,
+  },
+  {
+    id: 3,
+    icon: <Task className="text-[23px]" />,
+    name: "Task",
+    isSelected: false,
+  },
+  {
+    id: 4,
+    icon: <AddTask className="text-[23px]" />,
+    name: "Add Task",
+    isSelected: false,
+  },
+  {
+    id: 5,
+    icon: <Checklist className="text-[23px]" />,
+    name: "Checklist",
+    isSelected: false,
+  },
+  {
+    id: 6,
+    icon: <TaskAlt className="text-[23px]" />,
+    name: "Task Complete",
+    isSelected: false,
+  },
+  {
+    id: 7,
+    icon: <AssignmentTurnedIn className="text-[23px]" />,
+    name: "Completed Assignment",
+    isSelected: false,
+  },
+  {
+    id: 8,
+    icon: <AssignmentLate className="text-[23px]" />,
+    name: "Late Assignment",
+    isSelected: false,
+  },
+  {
+    id: 9,
+    icon: <AssignmentInd className="text-[23px]" />,
+    name: "Assigned To",
+    isSelected: false,
+  },
+  {
+    id: 10,
+    icon: <Pending className="text-[23px]" />,
+    name: "Pending",
+    isSelected: false,
+  },
+  {
+    id: 11,
+    icon: <Done className="text-[23px]" />,
+    name: "Done",
+    isSelected: false,
+  },
+  {
+    id: 12,
+    icon: <DoneAll className="text-[23px]" />,
+    name: "Done All",
+    isSelected: false,
+  },
+  {
+    id: 13,
+    icon: <CheckCircle className="text-[23px]" />,
+    name: "Check Circle",
+    isSelected: false,
+  },
+  {
+    id: 14,
+    icon: <CheckCircleOutline className="text-[23px]" />,
+    name: "Check Circle Outline",
+    isSelected: false,
+  },
+  {
+    id: 15,
+    icon: <Check className="text-[23px]" />,
+    name: "Check",
+    isSelected: false,
+  },
+  {
+    id: 16,
+    icon: <Circle className="text-[23px]" />,
+    name: "Circle",
+    isSelected: false,
+  },
+  {
+    id: 17,
+    icon: <PriorityHigh className="text-[23px]" />,
+    name: "Priority",
+    isSelected: false,
+  },
+  {
+    id: 18,
+    icon: <Flag className="text-[23px]" />,
+    name: "Flag",
+    isSelected: false,
+  },
+  {
+    id: 19,
+    icon: <Star className="text-[23px]" />,
+    name: "Star",
+    isSelected: false,
+  },
+  {
+    id: 20,
+    icon: <StarBorder className="text-[23px]" />,
+    name: "Star Border",
+    isSelected: false,
+  },
+
+  // Projects
+  {
+    id: 21,
+    icon: <Work className="text-[23px]" />,
+    name: "Project",
+    isSelected: false,
+  },
+  {
+    id: 22,
+    icon: <WorkOutline className="text-[23px]" />,
+    name: "Project Outline",
+    isSelected: false,
+  },
+  {
+    id: 23,
+    icon: <Business className="text-[23px]" />,
+    name: "Business",
+    isSelected: false,
+  },
+  {
+    id: 24,
+    icon: <RocketLaunch className="text-[23px]" />,
+    name: "Launch Project",
+    isSelected: false,
+  },
+  {
+    id: 25,
+    icon: <Timeline className="text-[23px]" />,
+    name: "Timeline",
+    isSelected: false,
+  },
+  {
+    id: 26,
+    icon: <EventNote className="text-[23px]" />,
+    name: "Project Event",
+    isSelected: false,
+  },
+  {
+    id: 27,
+    icon: <GroupWork className="text-[23px]" />,
+    name: "Project Team",
+    isSelected: false,
+  },
+  {
+    id: 28,
+    icon: <Extension className="text-[23px]" />,
+    name: "Integration",
+    isSelected: false,
+  },
+
+  // Calendar / deadlines
+  {
+    id: 29,
+    icon: <CalendarMonth className="text-[23px]" />,
+    name: "Calendar",
+    isSelected: false,
+  },
+  {
+    id: 30,
+    icon: <CalendarToday className="text-[23px]" />,
+    name: "Calendar Today",
+    isSelected: false,
+  },
+  {
+    id: 31,
+    icon: <DateRange className="text-[23px]" />,
+    name: "Date Range",
+    isSelected: false,
+  },
+  {
+    id: 32,
+    icon: <Event className="text-[23px]" />,
+    name: "Event",
+    isSelected: false,
+  },
+  {
+    id: 33,
+    icon: <EventAvailable className="text-[23px]" />,
+    name: "Event Available",
+    isSelected: false,
+  },
+  {
+    id: 34,
+    icon: <EventBusy className="text-[23px]" />,
+    name: "Event Busy",
+    isSelected: false,
+  },
+  {
+    id: 35,
+    icon: <Today className="text-[23px]" />,
+    name: "Today",
+    isSelected: false,
+  },
+  {
+    id: 36,
+    icon: <Schedule className="text-[23px]" />,
+    name: "Schedule",
+    isSelected: false,
+  },
+  {
+    id: 37,
+    icon: <WatchLater className="text-[23px]" />,
+    name: "Watch Later",
+    isSelected: false,
+  },
+  {
+    id: 38,
+    icon: <HourglassEmpty className="text-[23px]" />,
+    name: "Deadline",
+    isSelected: false,
+  },
+
+  // People / teams
+  {
+    id: 39,
+    icon: <People className="text-[23px]" />,
+    name: "People",
+    isSelected: false,
+  },
+  {
+    id: 40,
+    icon: <PeopleAlt className="text-[23px]" />,
+    name: "People Alt",
+    isSelected: false,
+  },
+  {
+    id: 41,
+    icon: <Person className="text-[23px]" />,
+    name: "Person",
+    isSelected: false,
+  },
+  {
+    id: 42,
+    icon: <PersonAdd className="text-[23px]" />,
+    name: "Add Person",
+    isSelected: false,
+  },
+  {
+    id: 43,
+    icon: <PersonOutline className="text-[23px]" />,
+    name: "Person Outline",
+    isSelected: false,
+  },
+  {
+    id: 44,
+    icon: <Group className="text-[23px]" />,
+    name: "Group",
+    isSelected: false,
+  },
+  {
+    id: 45,
+    icon: <GroupAdd className="text-[23px]" />,
+    name: "Add Group",
+    isSelected: false,
+  },
+  {
+    id: 46,
+    icon: <Groups className="text-[23px]" />,
+    name: "Team",
+    isSelected: false,
+  },
+  {
+    id: 47,
+    icon: <SupervisorAccount className="text-[23px]" />,
+    name: "Manager",
+    isSelected: false,
+  },
+  {
+    id: 48,
+    icon: <ManageAccounts className="text-[23px]" />,
+    name: "Manage Accounts",
+    isSelected: false,
+  },
+
+  // Communication
+  {
+    id: 49,
+    icon: <Comment className="text-[23px]" />,
+    name: "Comment",
+    isSelected: false,
+  },
+  {
+    id: 50,
+    icon: <CommentBank className="text-[23px]" />,
+    name: "Comments",
+    isSelected: false,
+  },
+  {
+    id: 51,
+    icon: <Send className="text-[23px]" />,
+    name: "Send",
+    isSelected: false,
+  },
+  {
+    id: 52,
+    icon: <Campaign className="text-[23px]" />,
+    name: "Announcement",
+    isSelected: false,
+  },
+  {
+    id: 53,
+    icon: <Notifications className="text-[23px]" />,
+    name: "Notifications",
+    isSelected: false,
+  },
+  {
+    id: 54,
+    icon: <NotificationsActive className="text-[23px]" />,
+    name: "Active Notifications",
+    isSelected: false,
+  },
+  {
+    id: 55,
+    icon: <NotificationsNone className="text-[23px]" />,
+    name: "Notifications None",
+    isSelected: false,
+  },
+  {
+    id: 56,
+    icon: <Phone className="text-[23px]" />,
+    name: "Phone",
+    isSelected: false,
+  },
+
+  // Files / documents
+  {
+    id: 57,
+    icon: <Folder className="text-[23px]" />,
+    name: "Folder",
+    isSelected: false,
+  },
+  {
+    id: 58,
+    icon: <FolderOpen className="text-[23px]" />,
+    name: "Open Folder",
+    isSelected: false,
+  },
+  {
+    id: 59,
+    icon: <FolderShared className="text-[23px]" />,
+    name: "Shared Folder",
+    isSelected: false,
+  },
+  {
+    id: 60,
+    icon: <CreateNewFolder className="text-[23px]" />,
+    name: "New Folder",
+    isSelected: false,
+  },
+  {
+    id: 61,
+    icon: <Description className="text-[23px]" />,
+    name: "Document",
+    isSelected: false,
+  },
+  {
+    id: 62,
+    icon: <InsertDriveFile className="text-[23px]" />,
+    name: "File",
+    isSelected: false,
+  },
+  {
+    id: 63,
+    icon: <AttachFile className="text-[23px]" />,
+    name: "Attach File",
+    isSelected: false,
+  },
+  {
+    id: 64,
+    icon: <Attachment className="text-[23px]" />,
+    name: "Attachment",
+    isSelected: false,
+  },
+  {
+    id: 65,
+    icon: <InsertLink className="text-[23px]" />,
+    name: "Insert Link",
+    isSelected: false,
+  },
+  {
+    id: 66,
+    icon: <Link className="text-[23px]" />,
+    name: "Link",
+    isSelected: false,
+  },
+  {
+    id: 67,
+    icon: <Download className="text-[23px]" />,
+    name: "Download",
+    isSelected: false,
+  },
+  {
+    id: 68,
+    icon: <Upload className="text-[23px]" />,
+    name: "Upload",
+    isSelected: false,
+  },
+  {
+    id: 69,
+    icon: <Cloud className="text-[23px]" />,
+    name: "Cloud",
+    isSelected: false,
+  },
+  {
+    id: 70,
+    icon: <CloudUpload className="text-[23px]" />,
+    name: "Cloud Upload",
+    isSelected: false,
+  },
+  {
+    id: 71,
+    icon: <CloudDone className="text-[23px]" />,
+    name: "Cloud Done",
+    isSelected: false,
+  },
+
+  // Lists / views
+  {
+    id: 72,
+    icon: <List className="text-[23px]" />,
+    name: "List",
+    isSelected: false,
+  },
+  {
+    id: 73,
+    icon: <ListAlt className="text-[23px]" />,
+    name: "List Alt",
+    isSelected: false,
+  },
+  {
+    id: 75,
+    icon: <DragIndicator className="text-[23px]" />,
+    name: "Drag",
+    isSelected: false,
+  },
+  {
+    id: 76,
+    icon: <Menu className="text-[23px]" />,
+    name: "Menu",
+    isSelected: false,
+  },
+
+  // Analytics
+  {
+    id: 77,
+    icon: <BarChart className="text-[23px]" />,
+    name: "Bar Chart",
+    isSelected: false,
+  },
+  {
+    id: 78,
+    icon: <PieChart className="text-[23px]" />,
+    name: "Pie Chart",
+    isSelected: false,
+  },
+  {
+    id: 79,
+    icon: <InsertChart className="text-[23px]" />,
+    name: "Chart",
+    isSelected: false,
+  },
+  {
+    id: 80,
+    icon: <AutoGraph className="text-[23px]" />,
+    name: "Analytics",
+    isSelected: false,
+  },
+  {
+    id: 81,
+    icon: <Insights className="text-[23px]" />,
+    name: "Insights",
+    isSelected: false,
+  },
+  {
+    id: 82,
+    icon: <Leaderboard className="text-[23px]" />,
+    name: "Leaderboard",
+    isSelected: false,
+  },
+  {
+    id: 83,
+    icon: <TrendingUp className="text-[23px]" />,
+    name: "Trending Up",
+    isSelected: false,
+  },
+
+  // Development
+  {
+    id: 84,
+    icon: <Code className="text-[23px]" />,
+    name: "Code",
+    isSelected: false,
+  },
+  {
+    id: 85,
+    icon: <BugReport className="text-[23px]" />,
+    name: "Bug",
+    isSelected: false,
+  },
+  {
+    id: 86,
+    icon: <Report className="text-[23px]" />,
+    name: "Report",
+    isSelected: false,
+  },
+  {
+    id: 87,
+    icon: <FactCheck className="text-[23px]" />,
+    name: "Fact Check",
+    isSelected: false,
+  },
+
+  // Actions
+  {
+    id: 88,
+    icon: <AddTask className="text-[23px]" />,
+    name: "Add",
+    isSelected: false,
+  },
+  {
+    id: 89,
+    icon: <Edit className="text-[23px]" />,
+    name: "Edit",
+    isSelected: false,
+  },
+  {
+    id: 90,
+    icon: <EditCalendar className="text-[23px]" />,
+    name: "Edit Calendar",
+    isSelected: false,
+  },
+  {
+    id: 91,
+    icon: <Delete className="text-[23px]" />,
+    name: "Delete",
+    isSelected: false,
+  },
+  {
+    id: 92,
+    icon: <Refresh className="text-[23px]" />,
+    name: "Refresh",
+    isSelected: false,
+  },
+  {
+    id: 93,
+    icon: <Autorenew className="text-[23px]" />,
+    name: "Sync",
+    isSelected: false,
+  },
+  {
+    id: 94,
+    icon: <PlayArrow className="text-[23px]" />,
+    name: "Start",
+    isSelected: false,
+  },
+  {
+    id: 95,
+    icon: <Stop className="text-[23px]" />,
+    name: "Stop",
+    isSelected: false,
+  },
+  {
+    id: 96,
+    icon: <Search className="text-[23px]" />,
+    name: "Search",
+    isSelected: false,
+  },
+  {
+    id: 97,
+    icon: <MoreHoriz className="text-[23px]" />,
+    name: "More Horizontal",
+    isSelected: false,
+  },
+  {
+    id: 98,
+    icon: <MoreVert className="text-[23px]" />,
+    name: "More Vertical",
+    isSelected: false,
+  },
+
+  // Organization
+  {
+    id: 99,
+    icon: <Label className="text-[23px]" />,
+    name: "Label",
+    isSelected: false,
+  },
+  {
+    id: 100,
+    icon: <PushPin className="text-[23px]" />,
+    name: "Pinned",
+    isSelected: false,
+  },
+  {
+    id: 101,
+    icon: <Home className="text-[23px]" />,
+    name: "Home",
+    isSelected: false,
+  },
+  {
+    id: 102,
+    icon: <Inbox className="text-[23px]" />,
+    name: "Inbox",
+    isSelected: false,
+  },
+  {
+    id: 103,
+    icon: <Inventory className="text-[23px]" />,
+    name: "Inventory",
+    isSelected: false,
+  },
+  {
+    id: 104,
+    icon: <Notes className="text-[23px]" />,
+    name: "Notes",
+    isSelected: false,
+  },
+  {
+    id: 105,
+    icon: <Note className="text-[23px]" />,
+    name: "Note",
+    isSelected: false,
+  },
+  {
+    id: 106,
+    icon: <NoteAdd className="text-[23px]" />,
+    name: "Add Note",
+    isSelected: false,
+  },
+  {
+    id: 107,
+    icon: <ContactPage className="text-[23px]" />,
+    name: "Contact",
+    isSelected: false,
+  },
+  {
+    id: 108,
+    icon: <Contacts className="text-[23px]" />,
+    name: "Contacts",
+    isSelected: false,
+  },
+
+  // Sharing / permissions
+  {
+    id: 109,
+    icon: <Share className="text-[23px]" />,
+    name: "Share",
+    isSelected: false,
+  },
+  {
+    id: 110,
+    icon: <ShareOutlined className="text-[23px]" />,
+    name: "Share Outline",
+    isSelected: false,
+  },
+  {
+    id: 111,
+    icon: <Lock className="text-[23px]" />,
+    name: "Locked",
+    isSelected: false,
+  },
+  {
+    id: 112,
+    icon: <LockOpen className="text-[23px]" />,
+    name: "Unlocked",
+    isSelected: false,
+  },
+  {
+    id: 113,
+    icon: <Shield className="text-[23px]" />,
+    name: "Security",
+    isSelected: false,
+  },
+  {
+    id: 114,
+    icon: <Key className="text-[23px]" />,
+    name: "Key",
+    isSelected: false,
+  },
+  {
+    id: 115,
+    icon: <Verified className="text-[23px]" />,
+    name: "Verified",
+    isSelected: false,
+  },
+
+  // Account / system
+  {
+    id: 116,
+    icon: <Settings className="text-[23px]" />,
+    name: "Settings",
+    isSelected: false,
+  },
+  {
+    id: 117,
+    icon: <Login className="text-[23px]" />,
+    name: "Login",
+    isSelected: false,
+  },
+  {
+    id: 118,
+    icon: <Logout className="text-[23px]" />,
+    name: "Logout",
+    isSelected: false,
+  },
+  {
+    id: 119,
+    icon: <History className="text-[23px]" />,
+    name: "History",
+    isSelected: false,
+  },
+  {
+    id: 120,
+    icon: <Backup className="text-[23px]" />,
+    name: "Backup",
+    isSelected: false,
+  },
+  {
+    id: 121,
+    icon: <Language className="text-[23px]" />,
+    name: "Language",
+    isSelected: false,
+  },
+  {
+    id: 122,
+    icon: <Support className="text-[23px]" />,
+    name: "Support",
+    isSelected: false,
+  },
+  {
+    id: 123,
+    icon: <QuestionMark className="text-[23px]" />,
+    name: "Help",
+    isSelected: false,
+  },
+  {
+    id: 124,
+    icon: <Visibility className="text-[23px]" />,
+    name: "Visible",
+    isSelected: false,
+  },
+  {
+    id: 125,
+    icon: <VisibilityOff className="text-[23px]" />,
+    name: "Hidden",
+    isSelected: false,
+  },
+  {
+    id: 126,
+    icon: <Favorite className="text-[23px]" />,
+    name: "Favorite",
+    isSelected: false,
+  },
+  {
+    id: 127,
+    icon: <RemoveCircleOutline className="text-[23px]" />,
+    name: "Remove",
+    isSelected: false,
+  },
+  {
+    id: 128,
+    icon: <Photo className="text-[23px]" />,
+    name: "Photo",
+    isSelected: false,
+  },
+  {
+    id: 129,
+    icon: <Print className="text-[23px]" />,
+    name: "Print",
+    isSelected: false,
+  },
+  {
+    id: 130,
+    icon: <WorkspacePremium className="text-[23px]" />,
+    name: "Premium",
+    isSelected: false,
+  },
+  {
+    id: 131,
+    icon: <LocalLibrary className="text-[23px]" />,
+    name: "LocalLibrary",
+    isSelected: false,
+  },
+  {
+    id: 132,
+    icon: <LibraryBooks className="text-[23pc]" />,
+    name: "LibraryBooks",
+    isSelected: false,
+  },
+];
+
+export default function AllIcons() {
+  const {
+    allIconsDataObject: { allIconsData, setAllIconsData },
+    selectedIconObject: { selectedIcon, setSelectedIcon },
+    openIconsWindowObject: { setOpenIconsWindow },
+    openProjectWindowObject: { setOpenProjectWindow },
+    selectedWindowObject: { selectedWindow, setSelectedWindow },
+    openTasksWindowObject: { setOpenTasksWindow },
+  } = useContextApp();
+
+  function handleTheIconSelection(singleIcon: IconData) {
+    setAllIconsData((prevIcons) =>
+      prevIcons.map((icon) => ({
+        ...icon,
+        isSelected: icon.id === singleIcon.id,
+      })),
+    );
+
+    // Close the icon window
+    setSelectedIcon(singleIcon);
+    setOpenIconsWindow(false);
+  }
+
+  return (
+    <div className="flex flex-wrap gap-2 text-orange-600 p-3">
+      {allIconsData.map((singleIcon) => {
+        return (
+          <div
+            key={singleIcon.id}
+            onMouseDown={(event) => {
+              event.stopPropagation();
+              handleTheIconSelection(singleIcon);
+            }}
+            className={`w-9 h-9 shadow-sm border-slate-50 flex items-center justify-center rounded-lg hover:bg-orange-600 hover:text-white ${singleIcon.isSelected ? "bg-orange-600 text-white" : "bg-white text-orange-600"}`}
+          >
+            {singleIcon.icon}
+          </div>
+        );
+      })}
+    </div>
+  );
+}
